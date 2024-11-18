@@ -1,0 +1,56 @@
+---
+import '@fontsource/montserrat-alternates';
+import Layout from '../layouts/Layout.astro';
+import Instagram from '../components/icons/Instagram.astro'
+import { content } from "@content"
+
+const {title} = content
+---
+
+<Layout title={title}>
+	<main>
+
+		<div class="h-screen bg-slate-900 flex flex-col justify-center items-center p-4">
+
+			<div class="flex justify-center items-center">
+				<img src="/logo.png" alt="Nineties Grove" class="w-3/4 sm:w-1/4"/>
+			</div>
+
+			<hr class="w-3/4 sm:w-1/4 my-4 h-1 bg-white border-0">
+
+
+			<div class="flex flex-col justify-center items-center text-center mt-4">
+				<!-- <img src="/back.png" alt="Volveremos pronto" class="sm:w-1/4 mb-8"/> -->
+				<p class="text-white mb-2">
+					Hemos decidido tomar un respiro para trabajar en nuevas ideas y mejorar nuestra propuesta.
+				</p>
+				<p class="text-white">
+					¡Esten atentos a nuestras redes para actualizaciones!
+				</p>
+
+				<div class="flex justify-center items-center mt-16">
+					<img src="/follow-us.png" alt="Follow us" class="w-2/6 sm:w-1/6">
+					<div class="flex justify-center items-center ml-4 sm:ml-8">
+						<a class="text-white text-5xl" href="https://www.instagram.com/ninetiesgrove">
+							<Instagram class="hover:text-gray-400 w-12 sm:w-14 h-12 sm:h-14 text-white" />
+						</a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</main>
+</Layout>
+
+<style>
+	@keyframes vhs-animation {
+		0% { transform: translateY(0); }
+		50% { transform: translateY(-5px); }
+		100% { transform: translateY(0); }
+	}
+
+	.vhs-effect {
+		animation: vhs-animation 1s infinite;
+	}
+</style>

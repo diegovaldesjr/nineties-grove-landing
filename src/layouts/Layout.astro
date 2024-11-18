@@ -1,0 +1,47 @@
+---
+import '@fontsource/montserrat-alternates/600.css';
+import '@fontsource/montserrat-alternates/700.css';
+import { meta } from "@content"
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+
+const { image, summary, url } = meta
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+    <title>{title}</title>
+    <meta name="description" content={summary} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+    <link rel="preload" as="image" href={image} />
+
+    <meta property="og:url" content={url} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={summary} />
+    <meta property="og:image" content={image} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content={url.split("//")[1] ?? ''} />
+    <meta property="twitter:url" content={url} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={summary} />
+    <meta name="twitter:image" content={image} />
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+.montserrat-alternates {
+	font-family: "Montserrat Alternates", sans-serif;
+}
+</style>
